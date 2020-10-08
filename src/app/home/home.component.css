@@ -1,0 +1,23 @@
+.table-align .table>thead>tr>th { color: #A3A8AE; font-weight: normal; padding: 15px; background: #fff; border:none; font-size: 12px; border-radius:3px;}
+.table-align .table>tbody>tr>td { padding: 12px; background:#fff;border: none;vertical-align:middle;border-top: #DCDEE0 1px solid;border-bottom: #DCDEE0 1px solid;font-size: 14px; color: #4B5568}
+.table-align .table>tbody>tr {height: 50px;}
+.table-align .table>tbody>tr img {visibility: hidden;}
+.table-align .table>tbody>tr:hover img {visibility: visible; cursor: pointer;}
+.search-block span { float: right; width: 10%; text-align: center;}
+.search-block  .searchicon{ color:#777676; font-size: 20px; cursor: pointer;  position: absolute;
+    right: 0px;top:10px}
+.search-block .form-control { float: left; background: transparent; width:90%; color:#636363; border:none; font-size: 14px; box-shadow: none; 
+  padding: 10px 10px;}
+.search-block .form-control::-webkit-input-placeholder,.search-block .form-control:-ms-input-placeholder{ 
+  /* Chrome/Opera/Safari */
+    color:#c0c0bf;
+  }
+.search-block {
+    padding-left:10px;
+    background: #FAFAFA;
+}
+.inputposition{
+  font-size:12px;
+  font-weight:16px;
+  color: #A3A8AE;
+}

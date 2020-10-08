@@ -1,0 +1,57 @@
+﻿<h1>Hi {{currentUser.firstName}}!</h1>
+<p>You're logged in!!</p>
+<h3>All registered users:</h3>
+<!-- <ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        <br/><span class="badge badge-secondary">{{user.role}}</span>
+        <br/><a (click)="deleteUser(user.id)" class="badge badge-danger" *ngIf="currentUser.role == 'Auditor'">Delete</a>
+    </li>
+</ul> -->
+<div class="text-right">
+    <select style="width: 20%; padding: 10px; margin-bottom: 10px;" (click)="getTwentyFourHourTime(time)" [(ngModel)]="time">
+        <option value="12Hrs">12Hrs</option>
+        <option value="24Hrs">24Hrs</option>
+      </select> 
+</div>
+<div class="col-xs-12">
+    <input type="text" class="form-control" [(ngModel)]="searchUsers" (ngModelChange)="searchRegisteredUsersList()"
+        placeholder="Search for User Name">
+</div>
+<div class="table-align" id="desc">
+    <table aria-describedby="desc" class="table">
+        <thead>
+            <tr>
+                <th scope="col" class="min-width-150-px">Role</th>
+                <th scope="col" class="min-width-250-px">User Name
+                    <span (click)="sortByName()" style="cursor: pointer;">&#8595; (Sort)</span>
+                </th>
+                <th scope="col" class="width-110-px">Date</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users | paginate: { itemsPerPage: 7, currentPage: p }">
+                <td>
+                    {{user.role}}
+                </td>
+                <td>
+                    {{user.firstName}} {{user.lastName}}
+
+                </td>
+                <td *ngIf="!user.timeChange">
+                    {{user.createdDate | date: 'M/d/yy, h:mm a'}}
+
+                </td>
+                <td *ngIf="user.timeChange">
+                    {{user.createdDate | date: 'M/d/yy'}}, {{user.timeChange}}
+
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container col-xs-12 text-right">
+    <pagination-controls (pageChange)="p = $event" autoHide="true"></pagination-controls>
+</div>

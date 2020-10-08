@@ -1,0 +1,60 @@
+<h1>Hi {{currentUser.firstName}}!</h1>
+<p>You're logged in with Angular 8!!</p>
+<h3>All login audit :</h3>
+<!-- <ul>
+    <li *ngFor="let audit of audits">
+        <br/><span class="badge badge-primary">{{audit.user}}</span>
+        <br/><span class="badge badge-secondary">{{audit._id}}</span>
+        <br/>Login - {{audit.loginTime}}
+        <br/>Logout - {{audit.logoutTime}}
+        <br/>IP - {{audit.ip}}
+    </li>
+
+</ul> -->
+<div class="table-align" id="desc">
+    <table aria-describedby="desc" class="table">
+        <thead>
+            <tr>
+                <th scope="col" class="min-width-150-px">User</th>
+                <th scope="col" class="min-width-250-px">ID</th>
+                <th scope="col" class="width-110-px">Login Time</th>
+                <th>Logout Time</th>
+                <th>IP</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let audit of audits">
+                <td class="min-width-150-px">
+                    <p class="txt-overflow mar-0">
+                        {{audit.user}}
+                    </p>
+                </td>
+                <td class="min-width-250-px">
+                        <p class="txt-overflow mar-0">
+                                {{audit._id}}
+                            </p>
+                    
+                </td>
+                <td class="width-110-px">
+                        <p class="txt-overflow mar-0">
+                                {{audit.loginTime}}
+                            </p>
+                    
+                </td>
+                <td class="min-width-250-px">
+                    <p class="txt-overflow mar-0">
+                            {{audit.logoutTime}}
+                        </p>
+                
+            </td>
+            <td class="width-110-px">
+                    <p class="txt-overflow mar-0">
+                            {{audit.ip}}
+                        </p>
+                
+            </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
